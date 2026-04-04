@@ -6,9 +6,9 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
-    
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -16,46 +16,32 @@ class ViewController: UIViewController {
     @IBOutlet weak var providerLabel: UILabel!
     @IBOutlet weak var idLabel: UILabel!
     
-    
-    @IBAction func previousTapped(_ sender: UIButton) {
-        if currentIndex > 0 {
-                currentIndex -= 1
-                displayProduct()
-            }
-    }
-    
-    
-    @IBAction func nextTapped(_ sender: UIButton) {
-        if currentIndex < products.count - 1 {
-                currentIndex += 1
-                displayProduct()
-            }
-    }
-    
-    
-    @IBAction func addTapped(_ sender: UIButton) {
-    }
-    
-    
-    
-    @IBAction func searchTapped(_ sender: UIButton) {
-    }
-    
-    
-    
-    @IBAction func listTapped(_ sender: UIButton) {
-    }
-    
-    
     var products: [Product] = []
     var currentIndex = 0
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchProducts()
-            displayProduct()
+        displayProduct()
     }
+    
+    @IBAction func previousTapped(_ sender: UIButton) {
+        if currentIndex > 0 {
+            currentIndex -= 1
+            displayProduct()
+        }
+    }
+    
+    @IBAction func nextTapped(_ sender: UIButton) {
+        if currentIndex < products.count - 1 {
+            currentIndex += 1
+            displayProduct()
+        }
+    }
+    
+    @IBAction func addTapped(_ sender: UIButton) {}
+    @IBAction func searchTapped(_ sender: UIButton) {}
+    @IBAction func listTapped(_ sender: UIButton) {}
     
     func fetchProducts() {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -70,17 +56,14 @@ class ViewController: UIViewController {
     }
     
     func displayProduct() {
-        if products.count > 0 {
+        if products.count > 0 && currentIndex < products.count {
             let product = products[currentIndex]
             
-            nameLabel.text = product.name
-            descriptionLabel.text = product.productDescription
+            nameLabel.text = product.name ?? "N/A"
+            descriptionLabel.text = product.productDescription ?? "N/A"
             priceLabel.text = "$\(product.price)"
-            providerLabel.text = product.provider
+            providerLabel.text = product.provider ?? "N/A"
             idLabel.text = "\(product.productID)"
         }
     }
-
-
 }
-
