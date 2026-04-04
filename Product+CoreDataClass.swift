@@ -1,0 +1,17 @@
+//
+//  Product+CoreDataClass.swift
+//  A2_iOS_james_100898394
+//
+//  Created by Tech on 2026-04-04.
+//
+//
+
+public import Foundation
+public import CoreData
+
+public typealias ProductCoreDataClassSet = NSSet
+
+@objc(Product)
+public class Product: NSManagedObject {
+
+}

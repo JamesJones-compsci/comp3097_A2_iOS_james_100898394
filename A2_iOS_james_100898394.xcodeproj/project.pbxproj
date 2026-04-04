@@ -6,8 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		1869E6FC2F80CECE00CCA335 /* Product+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1869E6FA2F80CECE00CCA335 /* Product+CoreDataClass.swift */; };
+		1869E6FD2F80CECE00CCA335 /* Product+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1869E6FB2F80CECE00CCA335 /* Product+CoreDataProperties.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		1869E6DF2F80CC0B00CCA335 /* A2_iOS_james_100898394.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = A2_iOS_james_100898394.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1869E6FA2F80CECE00CCA335 /* Product+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1869E6FB2F80CECE00CCA335 /* Product+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -45,6 +52,8 @@
 		1869E6D62F80CC0B00CCA335 = {
 			isa = PBXGroup;
 			children = (
+				1869E6FA2F80CECE00CCA335 /* Product+CoreDataClass.swift */,
+				1869E6FB2F80CECE00CCA335 /* Product+CoreDataProperties.swift */,
 				1869E6E12F80CC0B00CCA335 /* A2_iOS_james_100898394 */,
 				1869E6E02F80CC0B00CCA335 /* Products */,
 			);
@@ -132,6 +141,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1869E6FC2F80CECE00CCA335 /* Product+CoreDataClass.swift in Sources */,
+				1869E6FD2F80CECE00CCA335 /* Product+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
