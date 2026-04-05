@@ -9,7 +9,6 @@
 import Foundation
 import CoreData
 
-public typealias ProductCoreDataClassSet = NSSet
 
 @objc(Product)
 public class Product: NSManagedObject {
