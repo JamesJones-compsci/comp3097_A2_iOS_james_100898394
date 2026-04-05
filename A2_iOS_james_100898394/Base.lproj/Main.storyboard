@@ -85,6 +85,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="addTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bHE-ZE-yRk"/>
+                                    <segue destination="rEb-eZ-Fm8" kind="show" id="Rpa-ZU-Dbp"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20w-rr-Esb">
@@ -128,6 +129,22 @@
             </objects>
             <point key="canvasLocation" x="1064.885496183206" y="130.98591549295776"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="ZNa-gh-RRA">
+            <objects>
+                <viewController id="rEb-eZ-Fm8" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="73B-Nj-szI">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Mjn-hA-oyH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xQv-aD-Isj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2gb-ef-eja" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1969" y="131"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZyN-WX-ocF">
             <objects>
@@ -148,6 +165,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
