@@ -2,8 +2,6 @@
 //  ViewController.swift
 //  A2_iOS_james_100898394
 //
-//  Created by Tech on 2026-04-04.
-//
 
 import UIKit
 import CoreData
@@ -24,14 +22,24 @@ class ViewController: UIViewController {
         
         fetchProducts()
         
-        // If no products exist, insert default data
+        // Insert default data ONLY if empty
         if products.count == 0 {
             insertDefaultProducts()
-            fetchProducts() // fetch again after inserting
+            fetchProducts()
         }
         
         displayProduct()
     }
+    
+    // CRITICAL: Refresh data when returning from Add screen
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        fetchProducts()
+        displayProduct()
+    }
+    
+    // MARK: - Button Actions
     
     @IBAction func previousTapped(_ sender: UIButton) {
         if currentIndex > 0 {
@@ -47,9 +55,19 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func addTapped(_ sender: UIButton) {}
-    @IBAction func searchTapped(_ sender: UIButton) {}
-    @IBAction func listTapped(_ sender: UIButton) {}
+    @IBAction func addTapped(_ sender: UIButton) {
+        // Navigation handled via storyboard (Push segue)
+    }
+    
+    @IBAction func searchTapped(_ sender: UIButton) {
+        // Will implement later
+    }
+    
+    @IBAction func listTapped(_ sender: UIButton) {
+        // Will implement later
+    }
+    
+    // MARK: - Core Data Functions
     
     func fetchProducts() {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -58,27 +76,49 @@ class ViewController: UIViewController {
         
         do {
             products = try context.fetch(request)
+            print("Fetched \(products.count) products")
         } catch {
             print("Error fetching data")
         }
     }
     
     func displayProduct() {
-        if products.count > 0 && currentIndex < products.count {
-            let product = products[currentIndex]
-            
-            nameLabel.text = product.name ?? "N/A"
-            descriptionLabel.text = product.productDescription ?? "N/A"
-            priceLabel.text = "$\(product.price)"
-            providerLabel.text = product.provider ?? "N/A"
-            idLabel.text = "\(product.productID)"
-            
-            print("Displaying product: \(product.name ?? "Unknown") at index \(currentIndex)")
+        // Handle empty case
+        if products.count == 0 {
+            nameLabel.text = "No Products Found"
+            descriptionLabel.text = ""
+            priceLabel.text = ""
+            providerLabel.text = ""
+            idLabel.text = ""
+            return
         }
+        
+        // Prevent index crash
+        if currentIndex >= products.count {
+            currentIndex = 0
+        }
+        
+        let product = products[currentIndex]
+        
+        nameLabel.text = product.name ?? "N/A"
+        descriptionLabel.text = product.productDescription ?? "N/A"
+        priceLabel.text = "$\(product.price)"
+        providerLabel.text = product.provider ?? "N/A"
+        idLabel.text = "\(product.productID)"
+        
+        print("Displaying: \(product.name ?? "Unknown") at index \(currentIndex)")
     }
     
     func insertDefaultProducts() {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        // Prevent duplicate inserts
+        let request: NSFetchRequest<Product> = Product.fetchRequest()
+        let count = (try? context.count(for: request)) ?? 0
+        
+        if count > 0 {
+            return
+        }
         
         let defaultProducts = [
             (1, "iPhone 15", "Latest Apple smartphone", 1299.99, "Apple"),
