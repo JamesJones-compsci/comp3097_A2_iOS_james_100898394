@@ -21,7 +21,15 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         fetchProducts()
+        
+        // If no products exist, insert default data
+        if products.count == 0 {
+            insertDefaultProducts()
+            fetchProducts() // fetch again after inserting
+        }
+        
         displayProduct()
     }
     
@@ -64,6 +72,41 @@ class ViewController: UIViewController {
             priceLabel.text = "$\(product.price)"
             providerLabel.text = product.provider ?? "N/A"
             idLabel.text = "\(product.productID)"
+            
+            print("Displaying product: \(product.name ?? "Unknown") at index \(currentIndex)")
+        }
+    }
+    
+    func insertDefaultProducts() {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        let defaultProducts = [
+            (1, "iPhone 15", "Latest Apple smartphone", 1299.99, "Apple"),
+            (2, "Galaxy S23", "Samsung flagship phone", 1199.99, "Samsung"),
+            (3, "MacBook Air", "Lightweight Apple laptop", 1499.99, "Apple"),
+            (4, "Dell XPS 13", "Powerful ultrabook", 1399.99, "Dell"),
+            (5, "iPad Pro", "High-performance tablet", 1099.99, "Apple"),
+            (6, "Sony WH-1000XM5", "Noise-cancelling headphones", 499.99, "Sony"),
+            (7, "Apple Watch", "Smart wearable device", 599.99, "Apple"),
+            (8, "Google Pixel 8", "Google smartphone", 999.99, "Google"),
+            (9, "HP Spectre x360", "Convertible laptop", 1599.99, "HP"),
+            (10, "Amazon Echo", "Smart home speaker", 199.99, "Amazon")
+        ]
+        
+        for item in defaultProducts {
+            let product = Product(context: context)
+            product.productID = Int64(item.0)
+            product.name = item.1
+            product.productDescription = item.2
+            product.price = item.3
+            product.provider = item.4
+        }
+        
+        do {
+            try context.save()
+            print("Default products inserted!")
+        } catch {
+            print("Error saving default products")
         }
     }
 }
