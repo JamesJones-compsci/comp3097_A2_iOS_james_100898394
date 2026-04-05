@@ -36,6 +36,11 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
         
         fetchProducts()
+        
+        if products.count > 0 {
+            currentIndex = products.count - 1
+        }
+        
         displayProduct()
     }
     

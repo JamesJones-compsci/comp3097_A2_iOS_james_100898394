@@ -168,6 +168,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Save Product">
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="saveTapped:" destination="rEb-eZ-Fm8" eventType="touchUpInside" id="UIe-gE-ls1"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Provider" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gTe-6z-H2c">
                                 <rect key="frame" x="16" y="493" width="82" height="34"/>
@@ -194,6 +197,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Product" id="xQv-aD-Isj"/>
+                    <connections>
+                        <outlet property="descriptionTextField" destination="CtP-se-S27" id="q05-fH-gb5"/>
+                        <outlet property="idTextField" destination="tjr-i2-t7l" id="1LM-G1-clD"/>
+                        <outlet property="nameTextField" destination="RVd-8F-8xM" id="pot-h3-slf"/>
+                        <outlet property="priceTextField" destination="FjI-wn-MBU" id="9WR-CH-2Ec"/>
+                        <outlet property="providerTextField" destination="gTe-6z-H2c" id="zYS-9R-i6J"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2gb-ef-eja" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

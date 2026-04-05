@@ -6,14 +6,57 @@
 //
 
 import UIKit
+import CoreData
 
 class AddProductViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var idTextField: UITextField!
+    
+    
+    @IBOutlet weak var nameTextField: UITextField!
+    
+    
+    @IBOutlet weak var descriptionTextField: UITextField!
+    
+    
+    @IBOutlet weak var priceTextField: UITextField!
+    
+    
+    @IBOutlet weak var providerTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    
+    
+    @IBAction func saveTapped(_ sender: UIButton) {
+        
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            
+            let product = Product(context: context)
+            
+            product.productID = Int64(idTextField.text ?? "0") ?? 0
+            product.name = nameTextField.text
+            product.productDescription = descriptionTextField.text
+            product.price = Double(priceTextField.text ?? "0") ?? 0.0
+            product.provider = providerTextField.text
+            
+            do {
+                try context.save()
+                print("Product saved!")
+                
+                navigationController?.popViewController(animated: true)
+                
+            } catch {
+                print("Error saving product")
+            }
+        
+        
+    }
+    
     
 
     /*
