@@ -98,7 +98,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="searchTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4CW-vS-4yf"/>
-                                    <segue destination="iv6-ps-RSn" kind="show" id="6JS-Gi-kmk"/>
+                                    <segue destination="Edx-3n-vae" kind="show" id="6JS-Gi-kmk"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QFb-sF-pAa">
@@ -133,7 +133,7 @@
         <!--Search Product-->
         <scene sceneID="RBq-hJ-ncx">
             <objects>
-                <viewController id="iv6-ps-RSn" sceneMemberID="viewController">
+                <viewController id="iv6-ps-RSn" customClass="SearchViewController" customModule="A2_iOS_james_100898394" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9iV-PC-OrQ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -207,7 +207,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wCB-ao-hMR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1562.5954198473282" y="806.33802816901414"/>
+            <point key="canvasLocation" x="2489.3129770992364" y="806.33802816901414"/>
         </scene>
         <!--Add Product-->
         <scene sceneID="ZNa-gh-RRA">
@@ -306,6 +306,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QkA-UI-plG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="138.1679389312977" y="130.98591549295776"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="UHL-C8-bjo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Edx-3n-vae" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="wbu-Vs-q2k"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hKC-wj-28L">
+                        <rect key="frame" x="0.0" y="118" width="393" height="54"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="iv6-ps-RSn" kind="relationship" relationship="rootViewController" id="u8A-ww-Toa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iQd-wU-XGj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1562.5954198473282" y="806.33802816901414"/>
         </scene>
     </scenes>
     <resources>
