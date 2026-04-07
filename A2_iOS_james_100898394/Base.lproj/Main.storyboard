@@ -180,6 +180,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Previous">
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="previousTapped:" destination="iv6-ps-RSn" eventType="touchUpInside" id="b0Q-g7-tma"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dbz-OZ-9fj">
                                 <rect key="frame" x="222" y="692" width="81" height="35"/>
@@ -189,6 +192,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Next">
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="nextTapped:" destination="iv6-ps-RSn" eventType="touchUpInside" id="HSK-DG-aX0"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B11-pE-leF">
                                 <rect key="frame" x="148" y="300" width="82" height="35"/>
@@ -198,12 +204,22 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Search">
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="searchTapped:" destination="iv6-ps-RSn" eventType="touchUpInside" id="cWm-7U-Zff"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="adq-ux-Xcy"/>
                         <color key="backgroundColor" red="0.72731338840000004" green="0.88150376080000004" blue="0.87070725419999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <navigationItem key="navigationItem" title="Search Product" id="mLd-rL-7IX"/>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="mMm-PF-4ff" id="5M4-Uy-xFP"/>
+                        <outlet property="nameLabel" destination="Jkk-K7-qT2" id="u2O-AI-GD6"/>
+                        <outlet property="priceLabel" destination="wfk-ES-hrt" id="iDR-ZX-Fr2"/>
+                        <outlet property="providerLabel" destination="Rav-lX-VvY" id="CMn-oI-IHw"/>
+                        <outlet property="searchTextField" destination="nYe-aw-Qc4" id="grb-4q-of4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wCB-ao-hMR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
