@@ -85,7 +85,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="addTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bHE-ZE-yRk"/>
-                                    <segue destination="rEb-eZ-Fm8" kind="show" id="Rpa-ZU-Dbp"/>
+                                    <segue destination="rEb-eZ-Fm8" kind="show" identifier="showAddProduct" id="Rpa-ZU-Dbp"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20w-rr-Esb">
@@ -98,7 +98,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="searchTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4CW-vS-4yf"/>
-                                    <segue destination="Edx-3n-vae" kind="show" id="6JS-Gi-kmk"/>
+                                    <segue destination="Edx-3n-vae" kind="show" identifier="showSearchProduct" id="6JS-Gi-kmk"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QFb-sF-pAa">
@@ -111,7 +111,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="listTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yXy-Qo-7fd"/>
-                                    <segue destination="IH2-HW-AEb" kind="show" id="w8R-Fy-V4A"/>
+                                    <segue destination="IH2-HW-AEb" kind="show" identifier="showProductList" id="w8R-Fy-V4A"/>
                                 </connections>
                             </button>
                         </subviews>
